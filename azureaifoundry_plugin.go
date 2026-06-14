@@ -398,6 +398,12 @@ func (a *AzureAIFoundry) inferModelCapabilities(modelName string, supportsMedia 
 
 func supportsToolCalling(modelName string) bool {
 	modelLower := strings.ToLower(modelName)
+	if strings.Contains(modelLower, "tts") ||
+		strings.Contains(modelLower, "transcribe") ||
+		strings.Contains(modelLower, "image") {
+		return false
+	}
+
 	return strings.Contains(modelLower, "gpt") ||
 		strings.Contains(modelLower, "kimi")
 }

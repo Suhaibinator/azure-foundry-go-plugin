@@ -43,6 +43,18 @@ func TestInferModelCapabilitiesDetectsToolCallingModels(t *testing.T) {
 			modelName: "dall-e-3",
 		},
 		{
+			name:      "gpt tts model does not support tools",
+			modelName: "gpt-4o-mini-tts",
+		},
+		{
+			name:      "gpt transcribe model does not support tools",
+			modelName: "gpt-4o-transcribe",
+		},
+		{
+			name:      "gpt image model does not support tools",
+			modelName: "gpt-image-1",
+		},
+		{
 			name:      "media flag is preserved",
 			modelName: "gpt-4o",
 			wantTools: true,
